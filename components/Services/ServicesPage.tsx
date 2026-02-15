@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SERVICES } from '../../constants';
 import { Service } from '../../types';
-import { ServiceWidget } from '../services/ServiceWidget';
-import { Search, Globe, Shield, Users, Trophy, Box, Building2, Factory, Warehouse, Command, ArrowRight, LayoutGrid, Zap } from 'lucide-react';
+import { ServiceWidget } from './ServiceWidget';
+import { Search, Building2, Factory, Warehouse, Command, ArrowRight, LayoutGrid } from 'lucide-react';
 
 interface ServicesPageProps {
   onServiceClick: (service: Service) => void;
@@ -139,10 +139,62 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({ onServiceClick, onNa
 
         {/* Bottom CTA */}
         <div className="mt-32 border-t border-white/10 pt-20 flex flex-col items-center text-center relative z-10">
-           <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-8 uppercase">
-              
-           </h2>
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase">
+            Keşif randevusu al
+          </h2>
 
+          <p className="max-w-2xl text-white/60 text-sm md:text-base font-semibold leading-relaxed mb-10">
+            Tesisinizi ve ihtiyaçlarınızı birlikte analiz edelim. Size en doğru çözümü, en hızlı şekilde planlayalım.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => onNavigate('contact')}
+            className="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full overflow-hidden uppercase tracking-[0.2em] font-black text-xs text-white backdrop-blur-md border border-white/10 bg-white/5 transition-all duration-500 hover:scale-105 hover:bg-white/10 hover:border-white/30 active:scale-95"
+          >
+            {/* Ambient animated glow */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -inset-10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background:
+                  'radial-gradient(60% 60% at 50% 50%, rgba(30,79,255,0.45) 0%, rgba(76,195,255,0.20) 35%, rgba(0,0,0,0) 70%)',
+              }}
+            />
+
+            {/* Moving sheen */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              style={{
+                background:
+                  'linear-gradient(110deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 45%, rgba(255,255,255,0) 70%)',
+                transform: 'translateX(-30%)',
+              }}
+            />
+
+            <span className="relative z-10">Randevu oluştur</span>
+            <div className="relative z-10 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center transition-all duration-500 group-hover:bg-white group-hover:text-[#1E4FFF]">
+              <ArrowRight className="w-4 h-4" />
+            </div>
+          </button>
+
+          <div className="mt-10 flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.35em] text-white/35">
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              Ücretsiz keşif
+            </span>
+            <span className="w-1 h-1 rounded-full bg-white/15" />
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              Hızlı teklif
+            </span>
+            <span className="w-1 h-1 rounded-full bg-white/15" />
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              Projelendirme
+            </span>
+          </div>
         </div>
 
       </div>
