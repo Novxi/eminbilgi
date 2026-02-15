@@ -3,7 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero/Hero';
 import { ServicesScrollSection } from './components/Services/ServicesScrollSection';
 import { ParticleSphere } from './components/Hero/ParticleSphere';
-import { ServiceDrawer } from './components/services/ServiceDrawer';
+import { ServiceDrawer } from './components/Services/ServiceDrawer';
 import { ServicesPage } from './components/Services/ServicesPage';
 import { PortfolioPage } from './components/Portfolio/PortfolioPage';
 import { ContactPage } from './components/Contact/ContactPage';
